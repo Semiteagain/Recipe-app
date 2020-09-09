@@ -16,7 +16,9 @@ const App = () => {
     },[]);
 
     const getRecipes = async ()=> {
-        const response = await fetch(`https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`)
+        const response = await fetch(
+            `https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`
+            );
         const data = await response.json();
         setFood(data.hits);
         console.log(data.hits)
@@ -32,9 +34,9 @@ const App = () => {
             </form>
             {food.map(food =>(
                 <Food  
-                title = {recipe.label}
-                calories ={recipe.calories}
-                image = {recipe.image}
+                title = {food.recipe.label}
+                calories ={food.recipe.calories}
+                image = {food.recipe.image}
                 />
             ))}
         </div>
