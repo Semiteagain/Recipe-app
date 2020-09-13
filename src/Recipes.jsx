@@ -10,15 +10,15 @@ const App = () => {
 
     
    const [food, setFood] = useState([]);
-   const [search, setSearch] = useState('');
+   const [search, setSearch] = useState(" ");
    const [query, setQuery] = useState('chicken')
 
 
     useEffect(()=> {
-        getRecipes()
+        getRecipes();
     },[query]);
 
-    const getRecipes = async ()=> {
+    const getRecipes = async () => {
         const response = await fetch(
             `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
             );
@@ -52,7 +52,7 @@ const App = () => {
                 onChange={updateSearch}  />
               <button  className="search-button" type="submit">
                   Search
-                  </button>
+             </button>
             </form>
             <div className="food">
             {food.map(food =>(
@@ -61,7 +61,7 @@ const App = () => {
                 title = {food.recipe.label}
                 calories ={food.recipe.calories}
                 image = {food.recipe.image}
-                ingredients = {food.recipe.ingredients}
+               
                 />
             ))}
             </div>

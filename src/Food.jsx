@@ -1,15 +1,15 @@
 import React from 'react';
 
 
-const Food = ({title, calories, image, ingredients}) => {
+const Food = ({title, calories, image}) => {
     return(
         <div>
             <h1>{title}</h1>
-            <ol>
+            {/* <ol>
              {ingredients.map(ingredient =>{
                  <li>{ingredient.text}</li>
              })}
-            </ol>
+            </ol> */}
             <p>{calories} </p>
             <img src={image} alt=""/>
         </div>
