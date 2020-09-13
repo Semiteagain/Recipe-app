@@ -23,3 +23,9 @@
     padding: 10px 20px;
     color: #ffffff;
 }
+
+.food{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
