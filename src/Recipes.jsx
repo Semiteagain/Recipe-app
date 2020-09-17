@@ -9,7 +9,7 @@ const App = () => {
     const APP_KEY = "c90bb15aa14946fb030537e55c23a796";
 
     
-   const [food, setFood] = useState([]);
+   const [recipes, setRecipes] = useState([]);
    const [search, setSearch] = useState(" ");
    const [query, setQuery] = useState('chicken')
 
@@ -23,7 +23,7 @@ const App = () => {
             `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
             );
         const data = await response.json();
-        setFood(data.hits);
+        setRecipes(data.hits);
         console.log(data.hits)
     };
     
@@ -55,13 +55,13 @@ const App = () => {
              </button>
             </form>
             <div className="food">
-            {food.map(food =>(
+            {recipes.map(recipes =>(
                 <Food  
-                key = {food.recipe.label}
-                title = {food.recipe.label}
-                calories ={food.recipe.calories}
-                image = {food.recipe.image}
-               
+                key = {recipes.recipe.label}
+                title = {recipes.recipe.label}
+                calories ={recipes.recipe.calories}
+                image = {recipes.recipe.image}
+                // ingredients = {recipes.recipe.ingredients}
                 />
             ))}
             </div>
